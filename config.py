@@ -10,10 +10,22 @@
 
 MOTOR_MAP = {
     #eyebrow_rigid
-    'eyebrow_left_inner': (0,0),
+    'eyebrow_right_inner': (0,0), #eyebrow_GUOHUAA0090:1
+    'eyebrow_right_outer': (0,1), #eyebrow_GUOHUAA0090:2
+    'eyebrow_left_inner': (0,2),  #eyebrow_GUOHUAA0090:3
+    'eyebrow_left_outer': (0,3),  #eyebrow_GUOHUAA0090:4
+    'cheek_left_tendon': (2,0), #cheek_tendon_GUOHUAA0090:5
+    'nose_left_tendon': (2,1), #cheek_tendon_GUOHUAA0090:6
+    'nose_right_tendon': (2,2), #cheek_tendon_GUOHUAA0090:7
+    'cheek_right_tendon': (2,3), #cheek_tendon_GUOHUAA0090:8
 
     #eye_rigid
-    
+    'eyeball_horizontal': (0,4), #connected to eye_m_shaped_board: 1
+    'upper_eyelid_left': (0,5), 
+    'lower_eyelid_left': (0,6),
+    'upper_eyelid_right': (0,7),
+    'lower_eyelid_right': (0,8),
+    'eyeball_vertical': (0,9),
     
     #mouth_rigid
     
