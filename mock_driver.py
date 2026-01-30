@@ -18,10 +18,10 @@ class MockServo:
 class MockServoKit:
     def __init__(self, channels=16, address=0x40):
         print(f"[MOCK] Initializing MockServoKit at address {hex(address)} with {channels} channels.")
-        self.servo = [MockServo(i) for i in range (channels)]
+        self.servo = [MockServo(address, i) for i in range(channels)]
 
 from mock_driver import MockServoKit
-kit = MockServoKit()
+kit = MockServoKit(0x40)
 kit.servo[0].angle = 90
 
 #The spinning method of servos needs to be specified as some sort of curve in formal implementation.
