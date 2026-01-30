@@ -28,13 +28,27 @@ MOTOR_MAP = {
     'eyeball_vertical': (0,9),
     
     #mouth_rigid
-    
-    
+    'upper_lip_left': (1,0), #mouth_MG90S: 1
+    'upper_lip_mid': (1,1), #mouth_MG90S: 11
+    'upper_lip_right': (1,2), #mouth_MG90S: 10
+    'mouth_right_corner_upper': (1,3), #mouth_MG90S: 8
+    'mouth_right_corner_lower': (1,4), #mouth_MG90S: 9
+    'mouth_left_corner_upper': (1,5), #mouth_MG90S: 6
+    'mouth_left_corner_lower': (1,6), #mouth_MG90S: 7
+    'lower_lip_left': (1,7), #mouth_MG90S: 18
+    'lower_lip_right': (1,8), #mouth_MG90S: 17
+    'lower_lip_mid_tendon': (1,9), #mouth_MG90S: 23
+    'jaw_horizontal': (1,10), #mouth_MG90S: 16
+    'jaw_right_upper':(1,11), #KS3518: 1
+    'jaw_right_lower':(1,12), #mouth_MG90S: 2
+    'jaw_left_upper':(1,13), #mouth_GUOHUAA0090: 1
+    'tongue_upper':(1,14), #mouth_MG90S: 12
+    'tongue_lower':(1,15), #mouth_MG90S: 21
+
     #neck_rigid
+    'neck_left':(2,4), #neck_KS3518: 1
+    'neck_right':(2,5), #neck_KS3518: 2
     
     
-    #nose_tendon
-    
-    #cheek_tendon
 
 }
