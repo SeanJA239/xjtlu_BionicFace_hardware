@@ -3,8 +3,8 @@ import time
 import json
 import random
 
-HOST = '10.66.10.13'
-PORT = 0 # don't know yet
+HOST = '192.168.137.93'
+PORT = 52183 # don't know yet
 
 def main():
     print(f" Sending fake angles to {HOST}:{PORT} ")
@@ -18,7 +18,7 @@ def main():
         client.sendto(message, (HOST, PORT))
 
         print(f" Sent: {fake_angles[:3]} ")
-        time.sleep(0.033)
+        time.sleep(0.1)
 
     #     except KeyboardInterrupt:
     #   #user command processing
