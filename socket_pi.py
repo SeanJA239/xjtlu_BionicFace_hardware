@@ -2,7 +2,7 @@ import socket
 import json
 import time
 
-USE_MOCK_HARDWARE = True
+USE_MOCK_HARDWARE = False
 
 HOST_IP = '0.0.0.0'
 PORT = 52183
@@ -12,7 +12,7 @@ if USE_MOCK_HARDWARE:
     from mock_driver import MockServoKit as ServoKit
 else:
     print("Real Running")
-    from adafruit_servokit import Servokit
+    from adafruit_servokit import ServoKit
 
 try:
     from config import MOTOR_MAP
@@ -21,12 +21,13 @@ except ImportError:
     MOTOR_MAP = {}
 
 def init_kits():
-    print("Initializing 3 kits")
+    print("Initializing kits",flush=True)
     drivers = {}
     try:
+        print("Try connecting kit 1",flush=True)
         drivers[0] = ServoKit(channels = 16, address = 0x40)
-        drivers[1] = ServoKit(channels = 16, address = 0x41)
-        drivers[2] = ServoKit(channels = 16, address = 0x42)
+       #drivers[1] = ServoKit(channels = 16, address = 0x41)
+       #drivers[2] = ServoKit(channels = 16, address = 0x42)
         print("Initialization complete")
     except Exception as e:
         print(f"Error initializing kits: {e}")
@@ -38,7 +39,6 @@ def safety_clamp(angle):
 
 def apply_movements(drivers, data_list):
     for motor_id, target_angle in enumerate(data_list):
-        
         if motor_id in MOTOR_MAP:
             board_idx, channel = MOTOR_MAP[motor_id]
         else:
@@ -56,8 +56,9 @@ def apply_movements(drivers, data_list):
 def main():
     kits = init_kits()
     if not kits:
+        print("init_kits() returned empty...")
         return
-    
+    print ("Init process worked!")
     server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     server.bind((HOST_IP, PORT))
 
@@ -81,3 +82,5 @@ def main():
     finally:
         server.close()
         print("Socket closed")
+if __name__ == "__main__":
+    main()
