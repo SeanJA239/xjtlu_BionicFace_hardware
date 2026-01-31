@@ -49,6 +49,7 @@ def apply_movements(drivers, data_list):
 
         if board_idx in drivers:
             try:
+                print(f"Setting board {board_idx} - Port {channel} -> {safe_angle} degrees")
                 drivers[board_idx].servo[channel].angle = safe_angle
             except Exception as e:
                 print(f"Error for board {board_idx} Ch {channel}:{e}")
